@@ -61,3 +61,75 @@
 - data = 1, 2, 3, 4, 5 -> this will be treated as a tuple. This behaviour is called automatic packing of a tuple. This is useful when returning a tuple from a function e.g return x, y -> this returns a tuple (x, y).
 
 - the divmod function returns the pair of values (a // b, a % b) associated with a single integer division.
+
+
+# Packing and Unpacking of Sequences
+
+- Python supports automatic packing, in automatic packing, comma seperated values on the rhs are treated as a tuple and then assigned to the identifier on the lhs.
+
+e.g
+
+data = 1, 2, 3, 4, 5
+
+data will be treated as a tuple containing (1, 2, 3, 4, 5)
+
+# Random Number Generation
+
+- Random numbers in python are generated using a pseudo-random number generator. This type of algorithm needs a seed, a starting point in which other random numbers will be generated from. Since making use of the same seed will produce the same results, one can use a timed user input or the current system time in milliseconds.
+
+
+# Operations on Least Significant Bits
+
+- The LSB is the rightmost bit in a binary representation of a number, holding the lowest place value (2 ^ 0).
+
+## Common operations on LSB
+
+- Getting the LSB. To obtain the value of the LSB, you can use the bitwise AND operator with 1
+
+``` python
+
+lsb = num & 1
+
+```
+
+- To ensure the LSB is set to 1, use the bitwise OR operator | with 1
+
+``` python
+
+lsb = num | 1
+
+```
+
+- In order to set the LSB to 0, use the bitwise AND operator with the bitwise NOT of 1.
+
+``` python
+
+num = 11
+num_clear_lsb = num & ~1
+
+```
+
+- To toggle the LSB (0 to 1, 1 to 0), use the bitwise XOR operator with 1.
+
+``` python
+
+num = 10
+num_toggled_lsb = num ^ 1
+
+```
+
+- To extract the N least significant bits, you can use a bitmask created by (1 << N) - 1 and then perform a bitwise AND operation.
+
+``` python
+
+num = 25
+n_bits = 3
+mask = (1 << n_bite) - 1
+extracted_bit = num & mask
+
+```
+
+## Bitmask
+
+- A bitmask is a sequence of bits used to manipulate other bits within a binary number or data structure.
+
