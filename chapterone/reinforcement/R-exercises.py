@@ -1,3 +1,6 @@
+import random
+from typing import Sequence
+
 # R-1.1
 def is_multiple(n: int, m: int) -> bool:
     return m % n == 0
@@ -75,3 +78,11 @@ print(*b)
 
 # R-1.11
 
+
+
+
+# R-1.12
+def custom_rand_choice(data: Sequence):
+    length = len(data)
+    index = random.randrange(length)
+    return data[index]
