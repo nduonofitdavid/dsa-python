@@ -142,3 +142,5 @@ def corct_arth_order() -> bool:
     inputs = map(int,inputs)
     a, b, c = inputs
     return (a + b == c) or (a == b - c) or (a * b == c)
+
+
