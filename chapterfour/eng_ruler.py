@@ -19,6 +19,9 @@ def draw_ruler(num_inches, major_length):
     
 draw_ruler(4, 4)
 
+# study the khan academy precalculus series videos which covers mathematical induction to understand justification
+# by induction.
+
 """
 What this code does, is to use the recursive approach to draw an english ruler
 you start out by giving it the  major length and the number of inches you want do draw.

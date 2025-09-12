@@ -14,3 +14,8 @@ data = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 low = 0
 high = len(data) - 1
 print(binary_search(data, 6, low, high))
+
+"""
+The binary search algorithm runs in O(log n) time for a sorted sequence with n elements.
+
+"""
