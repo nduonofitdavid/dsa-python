@@ -93,7 +93,40 @@ While considering the maximum number of recursive calls that may be started from
 
 The binary search algorithm is an example of linear recursion. The linear terminology reflects the structure of the recursion trace, not the asymptotic analysis of the running time.
 
+## Parameterization in Recursion
+
+While writing recursive functions, if you want to provide a clean interface, you can have the function signature with a clean interface as the outer function, and have an inner function that will carry out the dirty job.
+
+Example using the binary search recursive algorithm.
+
+
+``` python
+
+def clean_interface(data, target):
+    low = 0
+    high = len(data) - 1
+
+    def binary_search(data, target, low, hign):
+        ...
+        # perform binary search algorithm
+
+    location = binary_search(data, target, low, high)
+
+    return location
+
+```
+
+# Managing tail recursion
+
+When memory is a premium, recursive algorithms can be harder to manage, as for each function call, an activation record is needed to track the state of that function, leading to memory intensive algorithms. 
+
+But you can take a recursive algorithm nonrecursive by managing how the recursive structures are nested on the stack. This only shifts the memory usage from the interpreter to your stack, but still you may be able to reduce memory usage by storing only the minimal information necessary.
+
+A recursion is a tail recursion if any recursive call that is made from one contxt is the very last operation in that contxt, with the return value of the recursive call immediately returned by the enclosing recursion.
+
+When a recursion is a tail recursion, we can easily convert it to a non recursive approach by replacing the logic of the recursive call with a loop.
+
 # Note
 
-A recursion tract is not the same as a call stack, a recursion tract shows the sequence of function calls and returns during recursive execution, While a call stack is a data structure  that keeps track of these active function calls. The stack operates in a LIFO manner.
+A recursion trace is not the same as a call stack, a recursion trace shows the sequence of function calls and returns during recursive execution, While a call stack is a data structure  that keeps track of these active function calls. The stack operates in a LIFO manner.
 
