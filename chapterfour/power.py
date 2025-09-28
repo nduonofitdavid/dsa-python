@@ -50,3 +50,26 @@ class Solution:
 
 solution = Solution()
 print(solution.myPow(-3,3))
+
+
+# other loop approach
+
+class Solution:
+    def myPow(self, x: float, n: int) -> float:
+
+        result = 1.0
+
+        n_copy = n
+
+        if n_copy < 0:
+            x = 1.0 / x
+            n_copy = -n_copy
+
+        while n_copy > 0:
+            if n_copy % 2 != 0:
+                result *= x
+
+            x *= x
+            n_copy //= 2
+
+        return result 
